@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.DEBUG)
 class customer(ComplexModel):
     # user_name = Unicode(64, pattern='[a-z0-9_-]')
     # email_address = Unicode(128, pattern='[^@]+@[^@]+')
-    ID = M(Unicode, type_name='ID')
+    ID = M(Integer, type_name='ID')
     Name = M(Unicode, type_name='Name')
     Email = M(Unicode, type_name='Email')
     Phone = M(Unicode, type_name='Phone')
@@ -34,7 +34,7 @@ class CustomerService(ServiceBase):
 
         except Exception as e:
             # return ["Failed", 'email already in use' ]
-            return ["Failed", str(e)]
+            return ["Creation Failed", str(e)]
         return ["Created", ID]
 
     # _out_variable_names=Array[["ID", "Name", "Email", "Phone"]
@@ -46,10 +46,10 @@ class CustomerService(ServiceBase):
         all_customers_array = []
         for item in all_customers:
             all_customers_array.append(
-                [str(item.ID), item.Name, item.Email, item.Phone])
+                [item.ID, item.Name, item.Email, item.Phone])
         return all_customers_array
 
-    @ rpc(Integer, _returns=[Integer, Unicode, Unicode, Unicode], _out_variable_names=["ID", "Name", "Email", "Phone"])
+    @ rpc(Integer, _returns=(customer), _out_variable_name="customer")
     def get_by_id(ctx, ID):
         customer = Customer.objects.get(ID=ID)
 
