@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "5c11b10c-ee93-4c0a-b4f6-36d614cc74ce",
+		"name": "SOAP Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23109519"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <getall xmlns=\"spyne.examples.customer\"/>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/customer/?wsdl",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"customer",
+						""
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <create xmlns=\"spyne.examples.customer\">\r\n            <Name>Rakibul Hasan</Name>\r\n            <Email>rakibul@gmail.com</Email>\r\n            <Phone>01950641081</Phone>\r\n        </create>\r\n    </Body>\r\n</Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/customer/?wsdl",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"customer",
+								""
+							],
+							"query": [
+								{
+									"key": "wsdl",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 06 Jan 2023 15:10:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.7"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "820"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version='1.0' encoding='UTF-8'?>\n<soap11env:Envelope xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:plink=\"http://schemas.xmlsoap.org/ws/2003/05/partner-link/\" xmlns:wsdlsoap11=\"http://schemas.xmlsoap.org/wsdl/soap/\" xmlns:wsdlsoap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\" xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\" xmlns:soap11enc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soap11env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap12env=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap12enc=\"http://www.w3.org/2003/05/soap-encoding\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2003/03/addressing\" xmlns:xop=\"http://www.w3.org/2004/08/xop/include\" xmlns:http=\"http://schemas.xmlsoap.org/wsdl/http/\" xmlns:tns=\"spyne.examples.customer\"/>"
+				},
+				{
+					"name": "get_by_id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <get_by_id xmlns=\"spyne.examples.customer\">\r\n            <ID>3</ID>\r\n        </get_by_id>\r\n    </Body>\r\n</Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/customer/?wsdl",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"customer",
+								""
+							],
+							"query": [
+								{
+									"key": "wsdl",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 06 Jan 2023 15:12:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.7"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "382"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version='1.0' encoding='UTF-8'?>\n<soap11env:Envelope xmlns:soap11env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tns=\"spyne.examples.customer\">\n    <soap11env:Body>\n        <tns:get_by_idResponse>\n            <tns:ID>3</tns:ID>\n            <tns:Name>Rakibul</tns:Name>\n            <tns:Email>rakibul.hsn48@gmail.com</tns:Email>\n            <tns:Phone>01950641081</tns:Phone>\n        </tns:get_by_idResponse>\n    </soap11env:Body>\n</soap11env:Envelope>"
+				},
+				{
+					"name": "failed create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <create xmlns=\"spyne.examples.customer\">\r\n            <Name>Rakibul Hasan</Name>\r\n            <Email>rakibul@gmail.com</Email>\r\n            <Phone>01950641081</Phone>\r\n        </create>\r\n    </Body>\r\n</Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/customer/?wsdl",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"customer",
+								""
+							],
+							"query": [
+								{
+									"key": "wsdl",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 06 Jan 2023 15:16:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.7"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "347"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version='1.0' encoding='UTF-8'?>\n<soap11env:Envelope xmlns:soap11env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tns=\"spyne.examples.customer\">\n    <soap11env:Body>\n        <tns:createResponse>\n            <tns:Status>Failed</tns:Status>\n            <tns:ID>UNIQUE constraint failed: customer_customer.Email</tns:ID>\n        </tns:createResponse>\n    </soap11env:Body>\n</soap11env:Envelope>"
+				},
+				{
+					"name": "get_all",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <getall xmlns=\"spyne.examples.customer\"/>\r\n    </Body>\r\n</Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/customer/?wsdl",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"customer",
+								""
+							],
+							"query": [
+								{
+									"key": "wsdl",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 06 Jan 2023 15:50:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.7"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1013"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version='1.0' encoding='UTF-8'?>\n<soap11env:Envelope xmlns:soap11env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tns=\"spyne.examples.customer\" xmlns:s1=\"customer.views\">\n    <soap11env:Body>\n        <tns:getallResponse>\n            <tns:customers>\n                <s1:customer>\n                    <s1:ID>1</s1:ID>\n                    <s1:Name>Sakibul</s1:Name>\n                    <s1:Email>rakibul.hsn47@gmail.com</s1:Email>\n                    <s1:Phone>01950641081</s1:Phone>\n                </s1:customer>\n                <s1:customer>\n                    <s1:ID>2</s1:ID>\n                    <s1:Name>a</s1:Name>\n                    <s1:Email>b@gmail.com</s1:Email>\n                    <s1:Phone>0195656587</s1:Phone>\n                </s1:customer>\n                <s1:customer>\n                    <s1:ID>3</s1:ID>\n                    <s1:Name>Rakibul</s1:Name>\n                    <s1:Email>rakibul.hsn48@gmail.com</s1:Email>\n                    <s1:Phone>01950641081</s1:Phone>\n                </s1:customer>\n                <s1:customer>\n                    <s1:ID>4</s1:ID>\n                    <s1:Name>Rakibul</s1:Name>\n                    <s1:Email>rakibul.hsn49@gmail.com</s1:Email>\n                    <s1:Phone>01950641081</s1:Phone>\n                </s1:customer>\n                <s1:customer>\n                    <s1:ID>5</s1:ID>\n                    <s1:Name>Rakibul Hasan</s1:Name>\n                    <s1:Email>rakibul@gmail.com</s1:Email>\n                    <s1:Phone>01950641081</s1:Phone>\n                </s1:customer>\n            </tns:customers>\n        </tns:getallResponse>\n    </soap11env:Body>\n</soap11env:Envelope>"
+				}
+			]
+		}
+	]
+}
